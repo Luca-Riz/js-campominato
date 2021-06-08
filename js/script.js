@@ -28,15 +28,16 @@ console.log(numeriPc);
 var arrayUser = [];
 
 //! modificare 20 con 100 alla fine
-for(var i=0; i < level(20); i++){
+
+while(arrayUser.length < level(20)){
     var numUser = parseInt(prompt('inserisci un numero da 1 a 100'));
     if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
     {
         arrayUser.push(numUser) //mettili dentro array user
-    } else if (numeriPc.includes(numUser)){
-        console.log('hai perso, numero presente nella lista user');
     } else if (arrayUser.includes(numUser)){
         console.log('hai già inserito questo numero, riprova');
+    } else if (numeriPc.includes(numUser)){
+        console.log('hai perso, numero presente nella lista user');
     }
 }
 console.log(arrayUser);
