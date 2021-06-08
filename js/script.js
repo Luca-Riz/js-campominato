@@ -25,9 +25,23 @@ console.log(numeriPc);
 
 //chiedi all'utente (100-16) volte di inserire un numero alla volta sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
 
-for(var i=0; i < level(100); i++){
-    
+var arrayUser = [];
+
+//! modificare 20 con 100 alla fine
+for(var i=0; i < level(20); i++){
+    var numUser = parseInt(prompt('inserisci un numero da 1 a 100'));
+    if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
+    {
+        arrayUser.push(numUser) //mettili dentro array user
+    } else if (numeriPc.includes(numUser)){
+        console.log('hai perso, numero presente nella lista user');
+    } else if (arrayUser.includes(numUser)){
+        console.log('hai già inserito questo numero, riprova');
+    }
 }
+console.log(arrayUser);
+
+//todo attenzione che se il numero è uguale a quelli già inseriti, il contatore cresce lo stesso
 
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
@@ -41,7 +55,7 @@ for(var i=0; i < level(100); i++){
 
 
 
-//! ============================sezione funzioni==============================
+//* ============================sezione funzioni==============================
 
 //calcolo numero random da 'min' a 'max'
 function randomNum(min, max){
