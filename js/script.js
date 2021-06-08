@@ -28,19 +28,23 @@ console.log(numeriPc);
 var arrayUser = [];
 
 //! modificare 20 con 100 alla fine
-
-while(arrayUser.length < level(20)){
+while(arrayUser.length < level(20) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
+{
     var numUser = parseInt(prompt('inserisci un numero da 1 a 100'));
-    if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
-    {
-        arrayUser.push(numUser) //mettili dentro array user
+    if (numeriPc.includes(numUser)){
+        console.log('hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
     } else if (arrayUser.includes(numUser)){
         console.log('hai già inserito questo numero, riprova');
-    } else if (numeriPc.includes(numUser)){
-        console.log('hai perso, numero presente nella lista user');
+    } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
+    {
+        arrayUser.push(numUser) //mettili dentro array user
     }
 }
 console.log(arrayUser);
+//! modificare 20 con 100 alla fine
+if (arrayUser.length = level(20)){
+    console.log('hai vinto');
+}
 
 //todo attenzione che se il numero è uguale a quelli già inseriti, il contatore cresce lo stesso
 
@@ -52,7 +56,7 @@ console.log(arrayUser);
 
 
 
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. (lunghezza arrayUser)
 
 
 
