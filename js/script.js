@@ -39,20 +39,20 @@ while(arrayUser.length < level(100) && !numeriPc.includes(numUser)) /* e numUser
         console.log('hai già inserito questo numero, riprova');
     } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
     {
-        arrayUser.push(numUser) //mettili dentro array user
+        arrayUser.push(numUser); //mettili dentro array user
     }  
-};
+}
 
 if (arrayUser.length == level(100)) {
     console.log('hai vinto');
-};
+}
 
 //* ============================sezione funzioni==============================
 
 //calcolo numero random da 'min' a 'max'
 function randomNum(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
-};
+}
 
 //calcolo livello, numero massimo numeri - 16 (valori inseriti random dal pc)
 function level(numMax){
