@@ -4,6 +4,8 @@
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero. La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
+//todo arrivato fino a qui
+
 // BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50
 
 // Consigli del giorno:
@@ -28,7 +30,7 @@ console.log(numeriPc);
 var arrayUser = [];
 
 //! modificare 20 con 100 alla fine
-while(arrayUser.length < level(20) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
+while(arrayUser.length < level(100) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
 {
     var numUser = parseInt(prompt('inserisci un numero da 1 a 100'));
     if (numeriPc.includes(numUser)){
@@ -38,27 +40,12 @@ while(arrayUser.length < level(20) && !numeriPc.includes(numUser)) /* e numUser 
     } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
     {
         arrayUser.push(numUser) //mettili dentro array user
-    }
-}
-console.log(arrayUser);
-//! modificare 20 con 100 alla fine
-if (arrayUser.length = level(20)){
+    }  
+};
+
+if (arrayUser.length == level(100)) {
     console.log('hai vinto');
-}
-
-//todo attenzione che se il numero è uguale a quelli già inseriti, il contatore cresce lo stesso
-
-// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
-
-
-
-//La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti. (hai vinto, hai perso)
-
-
-
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito. (lunghezza arrayUser)
-
-
+};
 
 //* ============================sezione funzioni==============================
 
