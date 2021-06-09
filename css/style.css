@@ -16,5 +16,9 @@
 .box {
     background-color: green;
     border: 1px solid white;
-    height: 50vh;
+    height: 768px;
+}
+
+.box img {
+    width: 50%;
 }

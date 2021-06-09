@@ -37,6 +37,8 @@ elabora.addEventListener("click", function(){
     {
         var numUser = parseInt(prompt('Inserisci un numero da 1 a '+lev));
         if (numeriPc.includes(numUser)){
+            document.getElementById("bomb").classList.remove("d-none");
+            document.getElementById("bomb").classList.add("d-block");
             alert('Hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
         } else if (arrayUser.includes(numUser)){
             alert('Hai già inserito questo numero, riprova');
