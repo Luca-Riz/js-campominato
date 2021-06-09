@@ -35,18 +35,18 @@ elabora.addEventListener("click", function(){
     {
         var numUser = parseInt(prompt('Inserisci un numero da 1 a '+lev));
         if (numeriPc.includes(numUser)){
-            document.getElementById("bomb").classList.remove("d-none");
+            document.getElementById("bomb").classList.remove("d-none"); //tolgo d-none da 
             document.getElementById("bomb").classList.add("d-block");
             alert('Hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
         } else if (arrayUser.includes(numUser)){
             alert('Hai già inserito questo numero, riprova');
-        } else if(numUser <= 0 ||  isNaN(numUser))  /*controllo 0 e numeri negativi*/  {
-            alert('Inserire solo numeri positivi')
+        } else if(numUser <= 0 ||  isNaN(numUser) || numUser>lev)  /*controllo 0 e numeri negativi*/  {
+            alert('Inserire solo numeri positivi da 1 a '+lev)
         } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
         {
             arrayUser.push(numUser); //mettili dentro array user
         }  
-        // console.log(arrayUser);
+        console.log(arrayUser);
     }
     
     if (arrayUser.length == level(lev)) {
