@@ -11,41 +11,50 @@
 // Consigli del giorno:
 // ****Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
 
-//genera 16 numeri casuali da 1 a 100
+var elabora = document.getElementById('bInizia');
 
-var numeriPc = [];
+// *pulsante inizia
+elabora.addEventListener("click", function(){
 
-while(numeriPc.length < 16){
-    var numRandom = randomNum(1, 100);
-    if(!numeriPc.includes(numRandom)) //numeri non duplicati
-    {
-        numeriPc.push(numRandom);
+    var lev = documet.getElementById('lev').value;    
+    
+    //genera 16 numeri casuali da 1 a lev(100,80,50)
+    var numeriPc = [];
+    
+    while(numeriPc.length < 16){
+        var numRandom = randomNum(1, lev);
+        if(!numeriPc.includes(numRandom)) //numeri non duplicati
+        {
+            numeriPc.push(numRandom);
+        }
     }
-}
-
-console.log(numeriPc);
-
-//chiedi all'utente (100-16) volte di inserire un numero alla volta sempre compreso tra 1 e 100. L’utente non può inserire più volte lo stesso numero.
-
-var arrayUser = [];
-
-//! modificare 20 con 100 alla fine
-while(arrayUser.length < level(100) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
-{
-    var numUser = parseInt(prompt('inserisci un numero da 1 a 100'));
-    if (numeriPc.includes(numUser)){
-        console.log('hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
-    } else if (arrayUser.includes(numUser)){
-        console.log('hai già inserito questo numero, riprova');
-    } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
+    
+    console.log(numeriPc);
+    
+    //chiedi all'utente (lev-16) volte di inserire un numero alla volta sempre compreso tra 1 e lev. L’utente non può inserire più volte lo stesso numero.
+    
+    var arrayUser = [];
+    
+    while(arrayUser.length < level(lev) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
     {
-        arrayUser.push(numUser); //mettili dentro array user
-    }  
-}
+        var numUser = parseInt(prompt('inserisci un numero da 1 a '+lev));
+        if (numeriPc.includes(numUser)){
+            console.log('hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
+        } else if (arrayUser.includes(numUser)){
+            console.log('hai già inserito questo numero, riprova');
+        } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
+        {
+            arrayUser.push(numUser); //mettili dentro array user
+        }  
+    }
+    
+    if (arrayUser.length == level(lev)) {
+        console.log('hai vinto');
+    }
 
-if (arrayUser.length == level(100)) {
-    console.log('hai vinto');
-}
+
+
+});
 
 //* ============================sezione funzioni==============================
 
