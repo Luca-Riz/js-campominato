@@ -6,9 +6,7 @@
 
 // BONUS: (da fare solo se funziona tutto il resto) all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali: con difficoltà 0 => tra 1 e 100 con difficoltà 1 => tra 1 e 80 con difficoltà 2 => tra 1 e 50
 
-// Consigli del giorno:
-// ****Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
-
+//bonus
 var elabora = document.getElementById('bInizia');
 
 // *pulsante inizia
@@ -48,11 +46,11 @@ elabora.addEventListener("click", function(){
         {
             arrayUser.push(numUser); //mettili dentro array user
         }  
-        console.log(arrayUser);
+        // console.log(arrayUser);
     }
     
     if (arrayUser.length == level(lev)) {
-        console.log('Hai vinto');
+        alert('Hai vinto');
     }
 
 });
