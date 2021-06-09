@@ -42,12 +42,13 @@ elabora.addEventListener("click", function(){
             alert('Hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
         } else if (arrayUser.includes(numUser)){
             alert('Hai già inserito questo numero, riprova');
-        } else if(numUser <= 0 || numUser == NaN)  /*controllo 0 e numeri negativi*/  {
+        } else if(numUser <= 0 ||  isNaN(numUser))  /*controllo 0 e numeri negativi*/  {
             alert('Inserire solo numeri positivi')
-        } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser) && !NaN) //se numero utente non presente in numeriPc e in numeri arrayUser
+        } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
         {
             arrayUser.push(numUser); //mettili dentro array user
         }  
+        console.log(arrayUser);
     }
     
     if (arrayUser.length == level(lev)) {
