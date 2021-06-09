@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
     <title>Campo minato</title>
 </head>
-<body>
 
-  <main>
+<body class="bg-dark">
+  <div class="container-xl">
+    <div class="row">
+      <div class="col-10 offset-1">
+        <div class="box  mt_150">
+          
+          <!-- selezione livello -->
+          <form class="text-center mt-5">
+              <label for="lev">Scegli livello di gioco:</label>
+              <select id="lev" name="lev">
+                <option value="100">0 - Facile</option>
+                <option value="80">1 - Medio</option>
+                <option value="50">2 - Difficile</option>
+              </select>
+              <button id="bInizia">Inizia</button>
+            </form>
+            <!-- fine selezione livello -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+                
 
 
 
-    
   </main>
-    <!-- selezione livello -->
-    <form>
-        <label for="lev">Scegli livello di gioco:</label>
-        <select id="lev" name="lev">
-          <option value="100">0 - Facile</option>
-          <option value="80">1 - Medio</option>
-          <option value="50">2 - Difficile</option>
-        </select>
-        <button id="bInizia">Inizia</button>
-      </form>
-      <!-- fine selezione livello -->
 
 
     <script src="js/script.js"></script>

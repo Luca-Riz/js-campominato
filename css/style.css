@@ -4,7 +4,17 @@
     box-sizing: border-box;
 }
 
-body {
+/* common */
+
+.mt_150 {margin-top: 150px;}
+
+/* body {
     background-color: black;
     color: white;
+} */
+
+.box {
+    background-color: green;
+    border: 1px solid white;
+    height: 50vh;
 }

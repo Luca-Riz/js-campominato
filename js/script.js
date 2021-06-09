@@ -35,11 +35,13 @@ elabora.addEventListener("click", function(){
     
     while(arrayUser.length < level(lev) && !numeriPc.includes(numUser)) /* e numUser non in numPc */
     {
-        var numUser = parseInt(prompt('inserisci un numero da 1 a '+lev));
+        var numUser = parseInt(prompt('Inserisci un numero da 1 a '+lev));
         if (numeriPc.includes(numUser)){
-            alert('hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
+            alert('Hai perso, numero presente nella lista numeri del pc, il tuo risultato è: ' + arrayUser.length);
         } else if (arrayUser.includes(numUser)){
-            alert('hai già inserito questo numero, riprova');
+            alert('Hai già inserito questo numero, riprova');
+        } else if(numUser <= 0)  /*controllo 0 e numeri negativi*/  {
+            alert('Inserire solo numeri positivi')
         } else if(!numeriPc.includes(numUser) && !arrayUser.includes(numUser)) //se numero utente non presente in numeriPc e in numeri arrayUser
         {
             arrayUser.push(numUser); //mettili dentro array user
